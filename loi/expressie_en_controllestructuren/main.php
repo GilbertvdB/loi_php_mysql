@@ -26,7 +26,7 @@ require 'functions.php';
 			<P>Bereken hiernaast je BMI.</P>
 		
 			<?php //start programma bereken BMI
-              main(); 
+                main(); 
 		    ?>
 		</div>
 		
