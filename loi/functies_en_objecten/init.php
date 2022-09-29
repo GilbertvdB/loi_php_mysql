@@ -8,7 +8,7 @@ fwrite($fh, $init_score);
 fclose($fh);
 
 
-for($i = 1; $i < 16; ++$i) {
+for($i = 0; $i < 16; ++$i) {
     $fh = fopen("data/score_$i.txt", 'w');
     fwrite($fh, $init_score);
     fclose($fh);
