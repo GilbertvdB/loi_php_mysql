@@ -1,5 +1,6 @@
 <?php
 require 'emo_bunny.php';
+require 'score_handler.php';
 
 ?>
 
@@ -76,7 +77,38 @@ require 'emo_bunny.php';
     ?>
     </div>
     <div id='tables'><hr>
-    	<h2>Tables</h2>
+    	
+    	<?php save_score($score);?>
+    	
+  <table>
+  <tr>
+    <th colspan="5">Hoe vaak komen scores voor?</th>
+  </tr>
+  <tr>
+    <td class="td_color"><?php display_score(0);?></td>
+    <td><?php display_score(1);?></td>
+    <td class="td_color"><?php display_score(2);?></td>
+    <td><?php display_score(3);?></td>
+    <td class="td_color"><?php display_score(4);?></td>                           
+  </tr>
+  <tr>
+    <td><?php display_score(5);?></td>
+    <td class="td_color"><?php display_score(6);?></td>
+    <td><?php display_score(7);?></td>
+    <td class="td_color"><?php display_score(8);?></td>
+    <td><?php display_score(9);?></td>                                 
+  </tr>
+   <tr>
+    <td><?php display_score(10);?></td>
+    <td><?php display_score(11);?></td>
+    <td><?php display_score(12);?></td>
+    <td><?php display_score(13);?></td>
+    <td><?php display_score(14);?></td>                                 
+  </tr>
+  <tr>
+	<td><?php display_score(15);?></td>                              
+  </tr>
+</table> 
     	<?php  
     	//process score
     	
