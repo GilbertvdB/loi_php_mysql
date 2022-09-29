@@ -1,0 +1,30 @@
+body {
+	border: 1px solid red;
+}
+
+#bun {
+	width: 70px;
+	float: left;
+	font-family: "monospace";
+	border-style: dotted;
+	border-color: black;
+	margin-right: 10px;
+	color: blue;
+	line-height: 1.2;
+	letter-spacing: -1px;
+	
+	
+}
+
+.eyes {
+	color: black;
+}
+
+#row1 {
+	
+}
+
+#row2{
+	
+	margin-top: 100px;
+}
