@@ -8,8 +8,9 @@ class emo_bunny {
     
     
     function random_eyes() {
-        $eyes = array('@', '^','?', '&', '$', 'o', '>', '/');
-        $random = rand()&7;
+        $eyes = array('@', '^','?', '&', '$', 'o', '>', '/', 'x', '*');
+        $len_array = count($eyes) - 1;
+        $random = rand()&$len_array;
         $eye_l = $eye_r = $eyes[$random];
         //special eyes
         if ($eye_l == '>') {
@@ -28,7 +29,8 @@ class emo_bunny {
         list($l, $r) = $this->eyes;
         
         // bunny
-        $bunny = "<div id='bun' style='$this->bg_color'><pre>
+        $bunny = "<div id='bun' style='$this->bg_color'>
+<pre>
   $this->name
   ()_()    
   ($l.$r)    

@@ -1,7 +1,5 @@
 <?php  //function for generating a scores table
 
-// require_once 'score_handler.php';
-
 //init
 display_score_tables();
 
