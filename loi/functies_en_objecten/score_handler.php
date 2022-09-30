@@ -26,7 +26,7 @@ function get_score($x) {
 
 function display_score($nummer) {
     $aantal = get_score($nummer);
-    echo "Score $nummer komt $aantal voor.";
+    return "Score $nummer komt $aantal voor.";
 }
 
 ?>
