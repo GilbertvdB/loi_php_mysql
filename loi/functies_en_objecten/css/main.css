@@ -1,21 +1,32 @@
 body {
-	border: 1px solid red;
+	
 }
 
-pre {
-  display: block;
-  font-family: monospace;
-  white-space: pre;
-  margin: 1em 0;
+.outer {
+	display: grid;
+	border: 1px solid red;
+	display: grid;
+  	grid-template: 1fr / 1fr;
+}
+
+.outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+.outer .row2 {
+  z-index: 2;
+}
+.outer .row1 {
+  z-index: 1;
 }
 
 #bun {
-	width: 70px;
+	width: 67px;
 	float: left;
 	font-family: monospace;
 	border-style: dotted;
 	border-color: black;
-	margin-right: 10px;
+	margin-right: 5px;
 	color: blue;
 	line-height: 1.2;
 	letter-spacing: -1px;
@@ -24,15 +35,15 @@ pre {
 }
 
 .eyes {
-	color: black;
+	color: goldenrod;
 }
 
 #row1 {
-	
+	width: 100%;
 }
 
 #row2{
-	
+	width: 100%;
 	margin-top: 100px;
 }
 

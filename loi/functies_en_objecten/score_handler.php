@@ -29,4 +29,22 @@ function display_score($nummer) {
     return "Score $nummer komt $aantal voor.";
 }
 
+
+function highscore($score) {
+    $fh = fopen("data/highscore.txt", 'r');
+    $highscore = fgets($fh);
+    fclose($fh);
+    
+    if ($score > $highscore) {
+        $highscore = $score;
+        $file_h = fopen("data/highscore.txt", 'w');
+        fwrite($file_h, $highscore);
+        fclose($file_h);
+    }
+    
+    //display scores
+    echo "<h3>Highscore: ($highscore)</h3>";
+    echo "<h3>Score: ($score)</h3>";
+}
+
 ?>
