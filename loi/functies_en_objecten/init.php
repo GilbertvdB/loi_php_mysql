@@ -1,7 +1,6 @@
 <?php
-// initilize all txt document
+// initilize all scores.txt documents for tracking scores
 $init_score = 0;
-
 
 $fh = fopen("data/highscore.txt", 'w');
 fwrite($fh, $init_score);
