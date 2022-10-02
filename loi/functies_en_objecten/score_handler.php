@@ -1,9 +1,5 @@
-<?php
-// functions to handle scores
+<?php // functions to handle and process scores
 
-// $score = 0;
-
-// save_score($score);
 
 function save_score($x) {
     $read_f = fopen("data/score_$x.txt", 'r');
@@ -43,8 +39,8 @@ function highscore($score) {
     }
     
     //display scores
-    echo "<h3>Highscore: ($highscore)</h3>";
-    echo "<h3>Score: ($score)</h3>";
+    echo "\t<h3>Highscore: ($highscore)</h3>"."\n";
+    echo "\t<h3>Score: ($score)</h3>"."\n";
 }
 
 ?>

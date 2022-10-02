@@ -6,7 +6,8 @@ display_score_tables();
 
 function display_score_tables() {
     // start table and header
-    echo "<table><tr><th colspan='5'>Hoe vaak komen scores voor?</th></tr>"."\n";
+    echo "<table>"."\n"; 
+    echo"<tr><th colspan='5'>Hoe vaak komen scores voor?</th></tr>"."\n";
     
     $td_count = 0;  //counter for echoed td cell
     for ($i = 0; $i < 16; $i++) {
@@ -15,13 +16,13 @@ function display_score_tables() {
             echo "<tr>"."\n";
         };
         
-        //fill bg color for evey other td cell    
+        //fill bg color for evey other td cell.($i is even)    
         if ($i == 0 || $i % 2 == 0) {
-            echo "<td class='td_color'>" . display_score($i) . "</td>"."\n";
+            echo "\t<td class='td_color'>" . display_score($i) . "</td>"."\n";
             $td_count += 1;
         }
         else {
-            echo "<td>" . display_score($i) . "</td>"."\n";
+            echo "\t<td>" . display_score($i) . "</td>"."\n";
             $td_count++;
         };
        
@@ -31,7 +32,8 @@ function display_score_tables() {
            $td_count = 0;
        };  
     };
-    echo"</tr>"."\n";  // closing last td cell
-    echo "</table>";
+    
+    echo"\t<td></td><td></td><td></td><td></td></tr>"."\n";  // closing last td cell and adding 4 empty.(bordercollapse issue)
+    echo "</table>"."\n";
 }
 ?>

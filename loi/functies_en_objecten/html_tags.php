@@ -4,21 +4,24 @@ require_once 'score_handler.php';
 require_once 'emo_bunny.php';
 
 
-echo "<div class='outer'><div class='row1'><hr>"; 
+echo "<div class='outer'>"."\n";
+
+echo "<hr>"."\n"."<div class='row1'>"."\n"; 
         $top_row = top_row();
-      "</div>"; 
+        echo "</div>"."\n"; 
         
-echo "<div class='row2'><hr>";
+        echo "<hr>"."\n"."<div class='row2'>"."\n";
         $bottom_row = bottom_row($top_row);
-        "</div>";
+        echo "</div>"."\n";
 
-echo "<div id='scrore'><hr>";
+        echo "<hr>"."\n"."<div class='score'>"."\n";
         highscore($bottom_row);
-        "</div>";        
+        echo "</div>"."\n";        
         
-echo "<div id='tables'><hr>";         
-       save_score($bottom_row);
-       include_once 'scores_table.php';
-     "</div></div>"   
+        echo "<hr>"."\n"."<div class='tables'>"."\n";         
+        save_score($bottom_row);
+        include_once 'scores_table.php';
+        echo "</div>"."\n";   
 
+echo "</div>"."\n";
 ?>
