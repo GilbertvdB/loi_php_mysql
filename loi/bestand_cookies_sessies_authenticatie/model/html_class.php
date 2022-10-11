@@ -1,4 +1,4 @@
-<?php
+<?php //HTML Class
 
 class HTML {
     
@@ -7,8 +7,8 @@ class HTML {
         <!DOCTYPE html>
         <html>
         <head>
-        <meta http-equiv="content-type" content=" text/html;charset=utf-8">
-        <link rel="stylesheet" href="content/css/main.css">
+            <meta http-equiv="content-type" content=" text/html;charset=utf-8">
+            <link rel="stylesheet" href="content/css/main.css">
         <title>M.u.m</title>
         </head>
         <body>
@@ -22,8 +22,8 @@ class HTML {
         <!DOCTYPE html>
         <html>
         <head>
-        <meta http-equiv="content-type" content=" text/html;charset=utf-8">
-        <link rel="stylesheet" href="../content/css/main.css">
+            <meta http-equiv="content-type" content=" text/html;charset=utf-8">
+            <link rel="stylesheet" href="../content/css/main.css">
         <title>pop</title>
         </head>
         <body>
@@ -32,12 +32,6 @@ class HTML {
         ___TOP;
     }
     
-    function mid($content) {
-        echo <<<___CONTENT
-        <div class='content'>
-        <?php $content; ?> 
-        ___CONTENT;
-    }
     
     function bottom() {
         echo <<<___BOTTOM
@@ -48,3 +42,5 @@ class HTML {
     }
     
 }
+
+?>

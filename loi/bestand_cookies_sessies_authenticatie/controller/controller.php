@@ -1,5 +1,5 @@
-<?php
-include_once 'model/mum.php';
+<?php //controller module
+include_once 'model/model.php';
 include_once 'model/html_class.php';
 
 class Controller {
@@ -8,62 +8,52 @@ class Controller {
     
     public function __construct()
     {
-        $this->model = new Mum();
+        $this->model = new Model();
     }
     
     
     public function start() {
-        
+        // post request true - gift unpacked.
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            self::sessionStart();
-            $closed_box = $this->model->img_closed();
-            $sound = $this->model->sound_box();
-            HTML::top();
+            $closed_box = $this->model->mum_box('closed'); //model
+            HTML::top();  //view
             include 'view/mum_start.php';
-            HTML::bottom();
+            //continue in:
             self::mum_start();
-
         }
+        //no post request - first time visitors or refresh.
         else {
-            $gift_box = $this->model->show_gift();  //model
-            HTML::top();
-            include 'view/gift.php';//view
+            $gift_box = $this->model->mum_box('gift');  //model
+            HTML::top();  //view
+            include 'view/gift.php';
             HTML::bottom();
         }
     }
     
     public function mum_start() {
-      
+        //continue view mum_start - if condition section.
         if (isset($_POST['press'])) {
-            $_SESSION = array();
-            $_SESSION['semi'] = $this->model->openclose_box;
-            $_SESSION['open'] = $this->model->opened_box;  //model
-            
+            //init
+            session_start();
+            $_SESSION['semi'] = $this->model->mum_box('semi');
+            $_SESSION['open'] = $this->model->mum_box('opened');
+            // views
+            // play sound
             $this->model->play_sound();
+            //auto open tabs
+            $this->model->toon('popx','view/pop_x.php', 0);
+            $this->model->toon('popy','view/pop_y.php', 1200);
+            $this->model->toon('popz','view/pop_z.php', 2000);
+            //auto close tabs
+            $this->model->close('popx', 3000);//view
+            $this->model->close('popy', 3000);//view
+            $this->model->close('popz', 3000);//view
             
-//             Mum::play_sound();
+            HTML::bottom();  // close mum_start.php
             
-            $this->model->open('pop','view/pop_x.php', 0);
-            $this->model->open('pop1','view/pop_y.php', 1200);
-            $this->model->open('pop2','view/pop_z.php', 2000);
-            
-            $this->model->close('pop', 3000);//view
-            
-            $this->model->close('pop1', 3000);//view
-            
-            $this->model->close('pop2', 3000);//view
         }
     }
     
-    public function sessionStart() {
-        session_start();
-    }
-    
-    public function sessionEnd() {
-        $_SESSION = array();
-        session_unset();
-        session_destroy();
-    }
 }
 
 ?>
