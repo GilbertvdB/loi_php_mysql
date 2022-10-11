@@ -1,10 +1,28 @@
 body {
-	border: 1px solid black;
+	border: 0px solid black;
 }
 
 .center {
   margin: auto;
-  width: 30%;
-  border: 3px solid #73AD21;
-  padding: 10px;
+  width: 374px;
+  border: 0px solid #73AD21;
+  margin-top: 200px;
+}
+
+#img {
+	margin-left: 38px;
+}
+
+#unpack {
+	text-align: center;
+	font-size: 40px;
+	font-family: Verdana;
+}
+
+#box {
+	margin-left: 12px;
+}
+
+.mum {
+	margin-left: 30px;
 }

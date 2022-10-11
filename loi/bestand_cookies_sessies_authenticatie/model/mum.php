@@ -1,5 +1,8 @@
 <?php
 
+// $gift_box = "../content/images/box_closed.png";
+// echo "<img src=$gift_box alt='box_gift' style='width:350px;height:350px;'>"."\n";
+
 class Mum {
     public $gift_box = "content/images/gift.jpg";
     public $closed_box = "content/images/box_closed.png";

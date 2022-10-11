@@ -21,7 +21,7 @@ class Controller {
             include 'view/mum_start.php';
             HTML::bottom();
             self::mum_start();
-            self::sessionEnd();
+
         }
         else {
             $gift_box = $this->model->show_gift();  //model
@@ -32,8 +32,9 @@ class Controller {
     }
     
     public function mum_start() {
+      
         if (isset($_POST['press'])) {
-            //start session or outer scope
+            $_SESSION = array();
             $_SESSION['semi'] = $this->model->openclose_box;
             $_SESSION['open'] = $this->model->opened_box;  //model
             

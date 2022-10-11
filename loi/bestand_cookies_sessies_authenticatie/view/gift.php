@@ -1,10 +1,11 @@
 <?php
-echo "<img src=$gift_box alt='box_gift' style='width:350px;height:350px;'>"."\n";
 
-echo <<<__UNPACK_BUTTON
+echo <<<__UNPACK_GIFT
+<div id='box'>
 <form method="POST">
-    <input type="submit" name="unpack" value="Unpack Gift!" />
+    <input type="image" src='$gift_box' alt="Submit" width="350" height="350">
 </form>
-__UNPACK_BUTTON;
+<div id='unpack'>Unpack Gift!</div></div>
+__UNPACK_GIFT;
 
 ?>
