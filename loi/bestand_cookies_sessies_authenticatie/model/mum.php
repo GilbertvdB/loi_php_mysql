@@ -1,14 +1,15 @@
 <?php
 
-// $gift_box = "../content/images/box_closed.png";
-// echo "<img src=$gift_box alt='box_gift' style='width:350px;height:350px;'>"."\n";
+// $a = new Mum();
+// echo $a->play_sound();
+
 
 class Mum {
     public $gift_box = "content/images/gift.jpg";
     public $closed_box = "content/images/box_closed.png";
     public $openclose_box = "content/images/box_open_close.png";
     public $opened_box = "content/images/box_open.png";
-    
+    public $sound_box = "content/sounds/open_close.mp3";
     // init sounds
     
     //base meth
@@ -28,12 +29,41 @@ class Mum {
         return $this->opened_box;
     }
     
+    function sound_box() {
+        return $this->sound_box;
+    }
     
     //model meth
     function show_gift() {
         return $this->img_gift();
     }
     
+    function play_sound() {
+        $sound = $this->sound_box();
+        echo <<<__PLAY
+        <audio id="myBox">
+          <source src='$sound'  type="audio/mpeg">
+        </audio>
+        
+        <script>var Box = document.getElementById("myBox");
+                    Box.playbackRate = 2.5;
+                    Box.play();            
+        </script>
+        __PLAY;
+    }
+    
+    
+    function play() {
+        $sound = $this->sound_box();
+        echo <<<__PLAY
+        
+        
+        <script>var Box = document.getElementById("myBox");
+                    Box.playbackRate = 2.5;
+                    Box.play();            
+        </script>
+        __PLAY;
+    }
     
     function toon($url, $delay) {
         echo <<<__OPEN

@@ -17,6 +17,7 @@ class Controller {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             self::sessionStart();
             $closed_box = $this->model->img_closed();
+            $sound = $this->model->sound_box();
             HTML::top();
             include 'view/mum_start.php';
             HTML::bottom();
@@ -38,15 +39,19 @@ class Controller {
             $_SESSION['semi'] = $this->model->openclose_box;
             $_SESSION['open'] = $this->model->opened_box;  //model
             
+            $this->model->play_sound();
+            
+//             Mum::play_sound();
+            
             $this->model->open('pop','view/pop_x.php', 0);
-            $this->model->open('pop1','view/pop_y.php', 500);
-            $this->model->open('pop2','view/pop_z.php', 1500);
+            $this->model->open('pop1','view/pop_y.php', 1200);
+            $this->model->open('pop2','view/pop_z.php', 2000);
             
-            $this->model->close('pop', 2500);//view
+            $this->model->close('pop', 3000);//view
             
-            $this->model->close('pop1', 2500);//view
+            $this->model->close('pop1', 3000);//view
             
-            $this->model->close('pop2', 2500);//view
+            $this->model->close('pop2', 3000);//view
         }
     }
     

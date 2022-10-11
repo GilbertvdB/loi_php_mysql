@@ -1,7 +1,7 @@
 <?php
 
 echo <<<__UNPACK_GIFT
-<div id='box'>
+<div id='gift_box'>
 <form method="POST">
     <input type="image" src='$gift_box' alt="Submit" width="350" height="350">
 </form>
