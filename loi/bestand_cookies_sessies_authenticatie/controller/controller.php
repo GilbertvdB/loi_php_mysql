@@ -1,4 +1,4 @@
-<?php //controller module
+<?php //controller class module
 include_once 'model/model.php';
 include_once 'model/html_class.php';
 

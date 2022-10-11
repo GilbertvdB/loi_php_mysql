@@ -10,5 +10,4 @@ echo <<<__PRESS_BUTTON
 
 __PRESS_BUTTON;
 
-
 ?>

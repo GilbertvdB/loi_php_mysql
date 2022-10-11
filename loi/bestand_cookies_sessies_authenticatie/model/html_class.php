@@ -1,4 +1,4 @@
-<?php //HTML Class
+<?php //HTML class module
 
 class HTML {
     

@@ -1,4 +1,4 @@
-<?php //Mum Class module
+<?php //Mum class module
 
 class Mum {
     public $gift_box = "content/images/gift.jpg";
