@@ -34,3 +34,13 @@ Here I will store and upload all my practice assignements.
 ![opdracht_4_2](https://user-images.githubusercontent.com/101508384/195221083-f6980a15-847b-4361-b8f8-89dc861521c8.png)
 ![opdracht_4_3](https://user-images.githubusercontent.com/101508384/195221085-086a16fc-2ead-42b7-96b0-c5a961d0d1ec.png)
 ![opdracht_4_4](https://user-images.githubusercontent.com/101508384/195221087-53de00b1-e297-4888-84ce-a03a2cbfcea7.png)
+<br>
+<br>
+<br>
+<br>
+<h4>MySql en database.</h4>
+
+![opdracht_5_1](https://user-images.githubusercontent.com/101508384/196548579-49490dfb-7b67-414f-9431-8ae045846da5.png)
+![opdracht_5_2](https://user-images.githubusercontent.com/101508384/196548581-312c7237-272e-4102-80c1-84059a269713.png)
+![opdracht_5_3](https://user-images.githubusercontent.com/101508384/196548582-35b3fdde-15c0-438d-ac43-3e11b78ad7be.png)
+![opdracht_5_4](https://user-images.githubusercontent.com/101508384/196548583-573dc84d-8024-4931-84c0-303b2d3380ef.png)
