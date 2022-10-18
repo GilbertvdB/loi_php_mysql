@@ -1,31 +1,24 @@
-<?php  //artikelen toevoegen
+<?php  // artikelen toevoegen
+
 require_once 'login.php';
+include_once 'html_class.php';
 
-//PDO connect to server
-try
-{
-    $pdo = new PDO($attr, $user, $pass, $opts);
-}
-catch (PDOException $e)
-{
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
-}
+HTML::top();
 
-// artikel toevoegen
-echo "<h3>Artikel toevoegen</h3>";
-echo "<a href='index.php'>Terug naar menu</a>";
+// header & menu links
+echo "<h3>Artikel toevoegen</h3>"."\n";
+echo "<a href='index.php'>Terug naar menu</a>"."\n";
 
-//display form
+// display form
 echo <<<_ADD
 <form action="toevoegen.php" method="post"><pre>
 Artikel <input type="text" name="artikel_naam"><br>
   Prijs <input type="text" name="prijs"><br>
         <input type="submit" value="TOEVOEGEN">
-</pre></form>
+</pre></form>\n
 _ADD;
 
-
-
+// check if all info has been entered & process request.
 if (isset($_POST['artikel_naam'])   &&
     isset($_POST['prijs']))
 {
@@ -41,10 +34,8 @@ if (isset($_POST['artikel_naam'])   &&
     echo "$artikel_naam is toegevoegd!";
 }
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     header("simple_crud.php");
-// }
+echo "<hr>"."\n";
 
-echo "<hr>";
+HTML::bottom();
 
 ?>

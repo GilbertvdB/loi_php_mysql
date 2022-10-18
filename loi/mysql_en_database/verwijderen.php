@@ -1,28 +1,24 @@
-<?php
-//artikel verwijderen
+<?php  // artikel verwijderen
+
 require_once 'login.php';
+include_once 'html_class.php';
 
-//PDO connect to server
-try
-{
-    $pdo = new PDO($attr, $user, $pass, $opts);
-}
-catch (PDOException $e)
-{
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
-}
+HTML::top();
 
-echo "<h3>Artikel verwijderen</h3>";
-echo "<a href='index.php'>Terug naar menu</a>";
-//display form
+// header & menu links
+echo "<h3>Artikel verwijderen</h3>"."\n";
+echo "<a href='index.php'>Terug naar menu</a>"."\n";
+
+// display form
 echo <<<_DELETE
 <form action="verwijderen.php" method="post"><pre>
 Artikel <input type="text" name="artikel_naam"><br>
         <input type="submit" value="VERWIJDEREN">
-</pre></form>
+</pre></form>\n
 _DELETE;
 
 
+// verwijder artikel
 if (isset($_POST['artikel_naam']))
 {
     $stmt = $pdo->prepare("DELETE FROM artikelen WHERE Artikel_naam=?");
@@ -35,9 +31,8 @@ if (isset($_POST['artikel_naam']))
     echo "$artikel_naam is verwijderd!";
 }
 
+echo "<hr>"."\n";
 
- 
-
-echo "<hr>";
+HTML::bottom();
 
 ?>

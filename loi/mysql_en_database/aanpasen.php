@@ -1,55 +1,35 @@
-<?php //artikelen aanpasen
+<?php  // artikelen aanpasen
+
 require_once 'login.php';
+include_once 'html_class.php';
 
-//PDO connect to server
-try
-{
-    $pdo = new PDO($attr, $user, $pass, $opts);
+HTML::top();
+
+// header & menu links
+echo "<h3>Artikel aanpasen</h3>"."\n";
+echo "<a href='index.php'>Terug naar menu</a>"."\n";
+
+// check if post is empty or form submitted - clear form input.
+if ((empty($_POST)) || (isset($_POST['submit'])) ) {
+    $art_nr_box = 'Artikel Nummer <input type="text" name="artikel_nr"><br>';
 }
-catch (PDOException $e)
-{
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
-}
-
-echo "<h3>Artikel aanpasen</h3>";
-echo "<a href='index.php'>Terug naar menu</a>";
-
-if (isset($_POST['artikel_nr'])) {
+else {
     $artikel_nr = $_POST['artikel_nr'];
-    echo $artikel_nr;
-    echo <<<_UPDATE
-<form action="aanpasen.php" method="post"><pre>
-Artikel Nummer <input type="text" name="artikel_nr" value="Artikel Nummer" readonly><br>
-       Artikel <input type="text" name="artikel_naam"><br>
-         Prijs <input type="text" name="prijs"><br>
-               <input type="submit" value="AANPASEN">
-</pre></form>
-_UPDATE;
-}
-else 
-{
-    echo <<<_UPDATE
-<form action="aanpasen.php" method="post"><pre>
-Artikel Nummer <input type="text" name="artikel_nr"><br>
-       Artikel <input type="text" name="artikel_naam"><br>
-         Prijs <input type="text" name="prijs"><br>
-               <input type="submit" value="AANPASEN">
-</pre></form>
-_UPDATE;
+    $art_nr_box =  "Artikel Nummer <input type='text' name='artikel_nr' value=$artikel_nr readonly><br>";
 }
 
-
-//display form
-<<<_UPDATE
+// display form with filled or unfilled Artikel Nummer input box.
+echo <<<_UPDATE
 <form action="aanpasen.php" method="post"><pre>
-Artikel Nummer <input type="text" name="artikel_nr" value="Artikel Nummer" readonly><br>
-Artikel Nummer <input type="text" name="artikel_nr"><br>
+$art_nr_box
        Artikel <input type="text" name="artikel_naam"><br>
          Prijs <input type="text" name="prijs"><br>
-               <input type="submit" value="AANPASEN">
-</pre></form>
+               <input type="submit" name="submit" value="AANPASEN">
+</pre></form>\n
 _UPDATE;
 
+
+//  check if all info has been entered & process request.
 if (isset($_POST['artikel_nr'])   &&
     isset($_POST['artikel_naam'])   &&
     isset($_POST['prijs']))
@@ -65,9 +45,12 @@ if (isset($_POST['artikel_nr'])   &&
     
     $stmt->execute([$artikel_naam, $prijs, $artikel_nr]);
     
+    // feebback
     echo "Artikel nummer: $artikel_nr is aangepast naar Artikel: $artikel_naam en Prijs: $prijs!";
 }
 
-echo "<hr>";
+echo "<hr>"."\n";
+
+HTML::bottom();
 
 ?>
